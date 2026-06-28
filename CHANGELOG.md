@@ -2,6 +2,10 @@
 
 Neueste Version oben. Aktuelle Releases & Download: https://welldone-prompter.github.io/PROmpter/
 
+**Version 1.9** (Juni 2026)
+- **Schwester-App verlinkt:** Der **„❓"-Dialog (Über / Hilfe)** verweist jetzt direkt auf **WellDone!** – die Schwester-App für **Plattenbelegung & PCR-Setup vor dem Lauf**. *WellDone! = Vorbereitung, PROmpter = Auswertung.*
+- **Handbuch aktualisiert:** Ein überflüssiger Abschnitt wurde entfernt und ein Beispiel anonymisiert (neutrale Beispiel-Einrichtung statt einer realen).
+
 **Version 1.8** (Juni 2026)
 - **Englische Sprachvariante:** PROmpter spricht jetzt **Deutsch und Englisch** — umschaltbar in den **Einstellungen** (*Dateimanagement → „Sprache / Language"*, Standard Deutsch). Die Umstellung betrifft Oberfläche, PDF-Bericht, Excel und alle Meldungen und greift nach einem Neustart; im englischen Modus werden Zahlen mit **Punkt** statt Komma geschrieben. **Geräte- und Probendaten bleiben in beiden Sprachen unverändert** (PROmpter rechnet und interpretiert nichts neu). Das Handbuch liegt jetzt auf **Deutsch und Englisch** vor und öffnet automatisch in der eingestellten Sprache.
 
