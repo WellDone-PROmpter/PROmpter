@@ -18,7 +18,7 @@ Keine Installation nötig — die `.exe` einfach in einen festen Ordner legen un
 
 ## Was macht PROmpter?
 
-PROmpter **überwacht den Export-Ordner** des LightCycler PRO und bereitet die exportierten Läufe automatisch zu einem **PDF-Bericht** (Befund/Zusammenfassung inkl. Kurven) und einer **Excel-Tabelle** (für den späteren LIS-Import) auf — danach wird die Originaldatei archiviert. Oberfläche und Handbuch in **Deutsch & Englisch**.
+PROmpter **überwacht den Export-Ordner** des LightCycler PRO und bereitet die exportierten Läufe automatisch zu einem **PDF-Bericht** (Befund/Zusammenfassung inkl. Kurven) und einer **Excel-Tabelle** der Ergebnisse auf — danach wird die Originaldatei archiviert. Oberfläche und Handbuch in **Deutsch & Englisch**.
 
 ## 🧪 Schwester-App: WellDone!
 
@@ -38,4 +38,4 @@ Freie, private Weitergabe erwünscht; **kein Verkauf / kein kommerzieller Vertri
 
 ---
 
-*English — PROmpter is a free, fully **offline** Windows tool that watches the Roche LightCycler PRO export folder and turns exported runs into a **PDF report** and an **Excel table** (for later LIS import). Download from the [download page](https://welldone-prompter.github.io/PROmpter/). **Helper tool — not a medical device, not validated; check every report.** See the [English manual](MANUAL_EN.pdf). Sister app: [WellDone!](https://welldone-prompter.github.io/WellDone/) (plate setup before the run). An independent, private project, not reviewed or endorsed by Roche.*
+*English — PROmpter is a free, fully **offline** Windows tool that watches the Roche LightCycler PRO export folder and turns exported runs into a **PDF report** and an **Excel table** of the results. Download from the [download page](https://welldone-prompter.github.io/PROmpter/). **Helper tool — not a medical device, not validated; check every report.** See the [English manual](MANUAL_EN.pdf). Sister app: [WellDone!](https://welldone-prompter.github.io/WellDone/) (plate setup before the run). An independent, private project, not reviewed or endorsed by Roche.*
