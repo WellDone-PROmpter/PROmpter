@@ -2,6 +2,10 @@
 
 Neueste Version oben. Aktuelle Releases & Download: https://welldone-prompter.github.io/PROmpter/
 
+**Version 1.10** (Juli 2026)
+- **CSV-/TXT-Ergebnis-Export (neu):** Zusätzlich zu PDF und Excel kann PROmpter die Ergebnisse jetzt optional als **CSV/TXT-Tabelle im Roche-Stil** ausgeben — vier Formate: **LightCycler 96** (Standard), **LightCycler 480 – klassisch**, **LightCycler 480 – ausführlich** und ein frei konfigurierbares **„Do-it-yourself"** (Spalten, Trennzeichen, Dezimalzeichen, Anführungszeichen, Kopf-/Titelzeile). Aktivieren im Reiter *Dateimanagement* (Häkchen „CSV/TXT-Datei"), einstellen im neuen Reiter *CSV/TXT-Export*. **Cq und Ergebnis kommen unverändert vom Gerät**; da PROmpter qualitativ ist, bleiben Konzentrations-/Standard-Spalten leer bzw. „–".
+- **Kleinere Verbesserungen:** Kurven im PDF werden bei sehr starken Signalen sauber am Diagrammrand abgeschnitten (kein „Überschießen" mehr); die selbst erzeugten CSV/TXT-Dateien werden von der Ordner-Überwachung ignoriert.
+
 **Version 1.9** (Juni 2026)
 - **Schwester-App verlinkt:** Der **„❓"-Dialog (Über / Hilfe)** verweist jetzt direkt auf **WellDone!** – die Schwester-App für **Plattenbelegung & PCR-Setup vor dem Lauf**. *WellDone! = Vorbereitung, PROmpter = Auswertung.*
 - **Handbuch aktualisiert:** Ein überflüssiger Abschnitt wurde entfernt und ein Beispiel anonymisiert (neutrale Beispiel-Einrichtung statt einer realen).
