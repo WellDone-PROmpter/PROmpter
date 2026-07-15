@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PROmpter — Download</title>
-<meta name="description" content="PROmpter — kostenloses, offline laufendes Windows-Werkzeug, das LightCycler-PRO-Exporte automatisch zu PDF-Bericht und Excel aufbereitet.">
+<meta id="metadesc" name="description" content="PROmpter — kostenloses, offline laufendes Windows-Werkzeug, das LightCycler-PRO-Exporte automatisch zu PDF-Bericht und Excel aufbereitet.">
 <link rel="icon" type="image/png" href="logo.png">
 <style>
   :root{ --blue:#16527E; --accent:#27AE60; --ink:#243038; --muted:#6b7785; --line:#e3e8ee; --warn-bg:#FFF6E5; --warn-br:#E0B870; --warn-ink:#7A4F01; }
   *{ box-sizing:border-box; }
   body{ margin:0; font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif; color:var(--ink); background:#f6f8fb; line-height:1.55; }
   .wrap{ max-width:960px; margin:0 auto; padding:0 20px; }
-  header{ background:linear-gradient(160deg,#1d6fb0,#16527E); color:#fff; padding:46px 0 44px; text-align:center; }
+  header{ position:relative; background:linear-gradient(160deg,#1d6fb0,#16527E); color:#fff; padding:46px 0 44px; text-align:center; }
   .logo{ width:96px; height:auto; border-radius:18px; background:#fff; padding:8px; box-shadow:0 4px 14px rgba(0,0,0,.22); margin-bottom:10px; }
   header h1{ margin:0; font-size:46px; letter-spacing:.5px; }
   .tagline{ margin:6px 0 2px; font-size:20px; font-weight:600; opacity:.97; }
@@ -21,6 +21,18 @@
   .btn:hover{ background:#229954; }
   .meta{ font-size:14px; opacity:.9; margin:6px 0 0; }
   .meta a{ color:#dcefff; }
+  /* Sprachumschalter / language switch */
+  /* Dunkler (nicht heller) Schleier: hält den Kontrast der weissen DE/EN-Schrift über
+     dem blauen Verlauf über der WCAG-AA-Schwelle von 4,5:1. */
+  .langsw{ position:absolute; top:14px; right:16px; display:inline-flex; border:1px solid rgba(255,255,255,.55);
+           border-radius:8px; overflow:hidden; background:rgba(0,0,0,.20); }
+  .langsw button{ appearance:none; background:transparent; border:0; color:#fff; font:inherit; font-size:13px;
+                  font-weight:700; letter-spacing:.5px; padding:6px 13px; cursor:pointer; }
+  .langsw button + button{ border-left:1px solid rgba(255,255,255,.35); }
+  .langsw button:hover{ background:rgba(255,255,255,.14); }
+  .langsw button[aria-pressed="true"]{ background:#fff; color:var(--blue); }
+  html[data-lang="de"] .l-en{ display:none !important; }
+  html[data-lang="en"] .l-de{ display:none !important; }
   section{ padding:34px 0; border-bottom:1px solid var(--line); }
   .imgbox{ text-align:center; background:#fff; }
   .imgbox img{ max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; box-shadow:0 6px 22px rgba(20,40,70,.10); }
@@ -46,56 +58,98 @@
   .flyer a{ color:#1565C0; font-weight:600; }
   footer{ padding:30px 0 50px; color:var(--muted); font-size:14px; text-align:center; }
   footer a{ color:#1565C0; }
-  .en{ color:var(--muted); font-size:14px; font-style:italic; }
-  @media(max-width:680px){ ul.feat,.cards{ grid-template-columns:1fr; } header h1{ font-size:38px; } }
+  @media(max-width:680px){ ul.feat,.cards{ grid-template-columns:1fr; } header h1{ font-size:38px; } .logo{ margin-top:18px; } }
 </style>
+<script>
+// Sprache VOR dem Rendern festlegen: gemerkte Wahl, sonst Browsersprache (de… = Deutsch, sonst Englisch).
+// Muss im <head> laufen, sonst blitzt kurz die falsche Sprache auf.
+(function(){
+  var l = null;
+  try{ l = localStorage.getItem("lang"); }catch(e){}
+  if(l !== "de" && l !== "en"){
+    var n = (navigator.language || "de").toLowerCase();
+    l = (n === "de" || n.indexOf("de-") === 0) ? "de" : "en";
+  }
+  document.documentElement.setAttribute("data-lang", l);
+  document.documentElement.setAttribute("lang", l);
+})();
+</script>
 </head>
 <body>
 
 <header>
+  <div class="langsw" role="group" aria-label="Sprache / Language">
+    <button type="button" id="btn-de" onclick="setLang('de')" aria-pressed="true" lang="de">DE</button>
+    <button type="button" id="btn-en" onclick="setLang('en')" aria-pressed="false" lang="en">EN</button>
+  </div>
   <div class="wrap">
     <img class="logo" src="logo.png" alt="PROmpter Logo">
     <h1>PROmpter</h1>
-    <p class="tagline">Individuelle Ergebnis-Berichte für den Roche LightCycler PRO</p>
-    <p class="sub">Ein kostenloses, vollständig <strong>offline</strong> laufendes Windows-Werkzeug — aus den Exporten automatisch PDF-Berichte oder Excel erstellen.</p>
-    <a id="dlbtn" class="btn" href="https://github.com/WellDone-PROmpter/PROmpter/releases/latest">⬇&nbsp;&nbsp;PROmpter herunterladen</a>
-    <p class="meta">Immer die neueste Version · keine Installation · keine Administratorrechte<br>
+    <p class="tagline l-de">Individuelle Ergebnis-Berichte für den Roche LightCycler PRO</p>
+    <p class="tagline l-en">Custom result reports for the Roche LightCycler PRO</p>
+    <p class="sub l-de">Ein kostenloses, vollständig <strong>offline</strong> laufendes Windows-Werkzeug — aus den Exporten automatisch PDF-Berichte oder Excel erstellen.</p>
+    <p class="sub l-en">A free Windows tool that runs fully <strong>offline</strong> — turning the exports into PDF reports or Excel automatically.</p>
+    <a id="dlbtn" class="btn" href="https://github.com/WellDone-PROmpter/PROmpter/releases/latest">
+      <span class="l-de">⬇&nbsp;&nbsp;PROmpter herunterladen</span><span class="l-en">⬇&nbsp;&nbsp;Download PROmpter</span></a>
+    <p class="meta l-de">Immer die neueste Version · keine Installation · keine Administratorrechte<br>
       <a href="https://github.com/WellDone-PROmpter/PROmpter/releases">Alle Versionen &amp; Änderungen ansehen</a></p>
+    <p class="meta l-en">Always the latest version · no installation · no administrator rights<br>
+      <a href="https://github.com/WellDone-PROmpter/PROmpter/releases">View all versions &amp; changes</a></p>
   </div>
 </header>
 
 <section class="imgbox">
-  <div class="wrap"><img src="screenshot1.png" alt="PROmpter — Hauptfenster mit laufender Überwachung und Verarbeitungs-Protokoll"></div>
+  <div class="wrap"><img id="shot1" src="screenshot1.png"
+    alt="PROmpter — Hauptfenster mit laufender Überwachung und Verarbeitungs-Protokoll"
+    data-alt-de="PROmpter — Hauptfenster mit laufender Überwachung und Verarbeitungs-Protokoll"
+    data-alt-en="PROmpter — main window with active folder watching and the processing log"></div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>Was macht PROmpter?</h2>
+    <h2 class="l-de">Was macht PROmpter?</h2>
+    <h2 class="l-en">What does PROmpter do?</h2>
     <ul class="feat">
-      <li>Überwacht den <strong>Export-Ordner</strong> des LightCycler PRO</li>
-      <li>Erstellt automatisch einen <strong>PDF-Bericht</strong> (Befund + Kurven)</li>
-      <li>Erstellt automatisch eine <strong>Excel-Tabelle</strong> der Ergebnisse</li>
-      <li>Zusammensetzung der Berichte <strong>individuell anpassbar</strong></li>
-      <li>Auf Wunsch <strong>automatisches Drucken</strong> der Berichte</li>
-      <li>Archiviert die Originaldatei nach der Aufbereitung</li>
-      <li>Läuft im Hintergrund (Infobereich), vollständig <strong>offline</strong></li>
-      <li>Oberfläche &amp; Handbuch in <strong>Deutsch &amp; Englisch</strong></li>
+      <li class="l-de">Überwacht den <strong>Export-Ordner</strong> des LightCycler PRO</li>
+      <li class="l-en">Watches the <strong>export folder</strong> of the LightCycler PRO</li>
+      <li class="l-de">Erstellt automatisch einen <strong>PDF-Bericht</strong> (Befund + Kurven)</li>
+      <li class="l-en">Creates a <strong>PDF report</strong> automatically (findings + curves)</li>
+      <li class="l-de">Erstellt automatisch eine <strong>Excel-Tabelle</strong> der Ergebnisse</li>
+      <li class="l-en">Creates an <strong>Excel table</strong> of the results automatically</li>
+      <li class="l-de">Zusammensetzung der Berichte <strong>individuell anpassbar</strong></li>
+      <li class="l-en">The make-up of the reports is <strong>fully customisable</strong></li>
+      <li class="l-de">Auf Wunsch <strong>automatisches Drucken</strong> der Berichte</li>
+      <li class="l-en">Optional <strong>automatic printing</strong> of the reports</li>
+      <li class="l-de">Archiviert die Originaldatei nach der Aufbereitung</li>
+      <li class="l-en">Archives the original file once it has been processed</li>
+      <li class="l-de">Läuft im Hintergrund (Infobereich), vollständig <strong>offline</strong></li>
+      <li class="l-en">Runs in the background (notification area), fully <strong>offline</strong></li>
+      <li class="l-de">Oberfläche &amp; Handbuch in <strong>Deutsch &amp; Englisch</strong></li>
+      <li class="l-en">Interface &amp; manual in <strong>German &amp; English</strong></li>
     </ul>
   </div>
 </section>
 
 <section class="imgbox">
   <div class="wrap">
-    <h2 class="center">Beispiel: der fertige PDF-Bericht</h2>
-    <p class="lead">Pro Lauf automatisch — Kopfdaten, Kontroll-Gültigkeits-Check, Plattenübersicht und die Cq-Werte je Target.</p>
-    <img src="screenshot2.png" alt="PROmpter — Beispiel-PDF-Bericht (Seriennummern geschwärzt)">
+    <h2 class="center l-de">Beispiel: der fertige PDF-Bericht</h2>
+    <h2 class="center l-en">Example: the finished PDF report</h2>
+    <p class="lead l-de">Pro Lauf automatisch — Kopfdaten, Kontroll-Gültigkeits-Check, Plattenübersicht und die Cq-Werte je Target.</p>
+    <p class="lead l-en">Automatically for every run — header data, control validity check, plate overview and the Cq values per target.</p>
+    <img id="shot2" src="screenshot2.png"
+      alt="PROmpter — Beispiel-PDF-Bericht (Seriennummern geschwärzt)"
+      data-alt-de="PROmpter — Beispiel-PDF-Bericht (Seriennummern geschwärzt)"
+      data-alt-en="PROmpter — example PDF report (serial numbers redacted)">
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="sister">
+    <div class="sister l-de">
       🧪 <strong>Schwester-App: <a href="https://welldone-prompter.github.io/WellDone/">WellDone!</a></strong> — die Plattenbelegung &amp; das PCR-Setup <em>vor</em> dem Lauf (Pipettierschema + LC-PRO-Setup). <em>WellDone = Vorbereitung, PROmpter = Auswertung.</em>
+    </div>
+    <div class="sister l-en">
+      🧪 <strong>Sister app: <a href="https://welldone-prompter.github.io/WellDone/">WellDone!</a></strong> — the plate setup &amp; the PCR setup <em>before</em> the run (pipetting scheme + LC PRO setup). <em>WellDone = preparation, PROmpter = evaluation.</em>
     </div>
   </div>
 </section>
@@ -103,63 +157,133 @@
 <section>
   <div class="wrap cards">
     <div class="card">
-      <h3>📖 Handbuch</h3>
-      <p>Ausführliche Anleitung als PDF:</p>
+      <h3 class="l-de">📖 Handbuch</h3>
+      <h3 class="l-en">📖 Manual</h3>
+      <p class="l-de">Ausführliche Anleitung als PDF:</p>
+      <p class="l-en">Detailed instructions as a PDF:</p>
       <p><a href="HANDBUCH.pdf">Handbuch (Deutsch)</a> · <a href="MANUAL_EN.pdf">Manual (English)</a></p>
     </div>
     <div class="card">
-      <h3>▶ Erster Start (SmartScreen)</h3>
-      <p>Windows zeigt beim ersten Mal evtl. <em>„Der Computer wurde durch Windows geschützt"</em>:</p>
-      <ol>
-        <li>auf <strong>„Weitere Informationen"</strong> klicken</li>
-        <li>dann <strong>„Trotzdem ausführen"</strong></li>
-      </ol>
-      <p>Normal (App neu &amp; unsigniert), erscheint nur einmal.</p>
+      <h3 class="l-de">▶ Erster Start (SmartScreen)</h3>
+      <h3 class="l-en">▶ First start (SmartScreen)</h3>
+      <div class="l-de">
+        <p>Windows zeigt beim ersten Mal evtl. <em>„Der Computer wurde durch Windows geschützt"</em>:</p>
+        <ol>
+          <li>auf <strong>„Weitere Informationen"</strong> klicken</li>
+          <li>dann <strong>„Trotzdem ausführen"</strong></li>
+        </ol>
+        <p>Normal (App neu &amp; unsigniert), erscheint nur einmal.</p>
+      </div>
+      <div class="l-en">
+        <p>The first time, Windows may show <em>“Windows protected your PC”</em>:</p>
+        <ol>
+          <li>click <strong>“More info”</strong></li>
+          <li>then <strong>“Run anyway”</strong></li>
+        </ol>
+        <p>Normal (the app is new &amp; unsigned), appears only once.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>Weitergeben</h2>
-    <p><strong>Weitergabe ist explizit erwünscht!</strong></p>
+    <h2 class="l-de">Weitergeben</h2>
+    <h2 class="l-en">Pass it on</h2>
+    <p class="l-de"><strong>Weitergabe ist explizit erwünscht!</strong></p>
+    <p class="l-en"><strong>Sharing is explicitly encouraged!</strong></p>
     <div class="share">
       <code>welldone-prompter.github.io/PROmpter</code>
-      <button class="copybtn" onclick="copyUrl(this)">🔗 Link kopieren</button>
+      <button type="button" class="copybtn" onclick="copyUrl(this)">
+        <span class="l-de">🔗 Link kopieren</span><span class="l-en">🔗 Copy link</span></button>
     </div>
-    <p class="flyer">📄 <a href="flyer.pdf">QR-Code-Flyer (PDF)</a></p>
+    <p class="flyer l-de">📄 <a href="flyer.pdf">QR-Code-Flyer (PDF)</a></p>
+    <p class="flyer l-en">📄 <a href="flyer.pdf">QR code flyer (PDF)</a></p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="warn">
+    <div class="warn l-de">
       <strong>⚠️ Wichtiger Hinweis:</strong> PROmpter ist ein <strong>Hilfswerkzeug, kein Medizinprodukt und nicht validiert</strong>.
       Erzeugte Berichte <strong>vor der Verwendung prüfen</strong>. Es wird keine Haftung für Schäden oder fehlerhafte Ergebnisse übernommen.
       <p style="margin:12px 0 0;">PROmpter ist ein <strong>reines Darstellungs-/Report-Werkzeug</strong>. Alle Werte (Cq, finalCall, Kurven) stammen <strong>unverändert</strong> vom LightCycler PRO. PROmpter rechnet nichts neu und interpretiert nichts um — es fasst die geräte-eigenen Ergebnisse nur übersichtlich zusammen. Die Berichte sind eine <strong>Zwischenauswertung</strong>; die fachliche Freigabe erfolgt weiterhin manuell.</p>
+    </div>
+    <div class="warn l-en">
+      <strong>⚠️ Important note:</strong> PROmpter is a <strong>helper tool — not a medical device and not validated</strong>.
+      Check the generated reports <strong>before you use them</strong>. No liability is accepted for damage or incorrect results.
+      <p style="margin:12px 0 0;">PROmpter is <strong>purely a presentation and reporting tool</strong>. All values (Cq, finalCall, curves) come <strong>unchanged</strong> from the LightCycler PRO. PROmpter does not recalculate anything and does not reinterpret anything — it only lays out the instrument's own results clearly. The reports are an <strong>interim evaluation</strong>; the professional sign-off is still done manually.</p>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p>Feedback &amp; Fehlerberichte: <a href="mailto:well.done.pcr.setup@gmail.com">well.done.pcr.setup@gmail.com</a>
+    <p class="l-de">Feedback &amp; Fehlerberichte: <a href="mailto:well.done.pcr.setup@gmail.com">well.done.pcr.setup@gmail.com</a>
       · <a href="https://forms.gle/9QYvGAw1AXsfxYRk8">Online-Formular</a></p>
-    <p>Freie, private Weitergabe erwünscht · <strong>kein Verkauf / kein kommerzieller Vertrieb</strong>.<br>
+    <p class="l-en">Feedback &amp; bug reports: <a href="mailto:well.done.pcr.setup@gmail.com">well.done.pcr.setup@gmail.com</a>
+      · <a href="https://forms.gle/9QYvGAw1AXsfxYRk8">Online form</a></p>
+    <p class="l-de">Freie, private Weitergabe erwünscht · <strong>kein Verkauf / kein kommerzieller Vertrieb</strong>.<br>
       „Roche" und „LightCycler" sind Marken der jeweiligen Inhaber. PROmpter ist ein <strong>unabhängiges, privates Projekt</strong>,
       nicht von Roche geprüft oder verantwortet.</p>
-    <p class="en">English — PROmpter is a free, fully offline Windows tool that turns Roche LightCycler PRO exports into a PDF report and an Excel table.
-      <a href="https://github.com/WellDone-PROmpter/PROmpter/releases/latest">Download here</a>.
-      Helper tool — not a medical device, not validated; check every report. An independent, private project, not reviewed or endorsed by Roche.</p>
+    <p class="l-en">Free, private sharing is welcome · <strong>no sale / no commercial distribution</strong>.<br>
+      “Roche” and “LightCycler” are trademarks of their respective owners. PROmpter is an <strong>independent, private project</strong>,
+      not reviewed or endorsed by Roche.</p>
   </div>
 </footer>
 
 <script>
+var PAGE_URL = "https://welldone-prompter.github.io/PROmpter/";
+var META = {
+  de: { title:"PROmpter — Download",
+        desc:"PROmpter — kostenloses, offline laufendes Windows-Werkzeug, das LightCycler-PRO-Exporte automatisch zu PDF-Bericht und Excel aufbereitet." },
+  en: { title:"PROmpter — Download",
+        desc:"PROmpter — free, fully offline Windows tool that turns Roche LightCycler PRO exports into a PDF report and an Excel table." }
+};
+
+function curLang(){ return document.documentElement.getAttribute("data-lang") === "en" ? "en" : "de"; }
+
+// applyLang = nur anzeigen. setLang = anzeigen UND merken.
+// Getrennt, damit die bloss ERKANNTE Sprache nicht als bewusste Wahl gespeichert wird —
+// sonst folgt die Seite nie wieder einer geänderten Browsersprache.
+function applyLang(l){
+  document.documentElement.setAttribute("data-lang", l);
+  document.documentElement.setAttribute("lang", l);
+  document.getElementById("btn-de").setAttribute("aria-pressed", String(l === "de"));
+  document.getElementById("btn-en").setAttribute("aria-pressed", String(l === "en"));
+  document.title = META[l].title;
+  var m = document.getElementById("metadesc");
+  if(m){ m.setAttribute("content", META[l].desc); }
+  // Bild-Alternativtexte mitziehen (stehen als data-alt-de/-en am <img>).
+  var imgs = document.querySelectorAll("img[data-alt-" + l + "]");
+  for(var i = 0; i < imgs.length; i++){
+    imgs[i].setAttribute("alt", imgs[i].getAttribute("data-alt-" + l));
+  }
+}
+
+// Nur der echte Klick auf DE/EN merkt sich die Sprache.
+function setLang(l){
+  if(l !== "de" && l !== "en"){ l = "de"; }
+  try{ localStorage.setItem("lang", l); }catch(e){}
+  applyLang(l);
+}
+
+// Der Knopf enthält beide Sprach-Spans; die Rückmeldung ersetzt sie kurz durch reinen Text.
+// copyTimer/copyHtml sichern das Original nur beim ERSTEN Klick — sonst würde ein schneller
+// Zweitklick "✓ Kopiert" als Original sichern und der Knopf bliebe für immer darauf stehen.
+var copyTimer = null, copyHtml = null;
 function copyUrl(btn){
-  navigator.clipboard.writeText("https://welldone-prompter.github.io/PROmpter/").then(function(){
-    var t = btn.textContent; btn.textContent = "✓ Kopiert"; setTimeout(function(){ btn.textContent = t; }, 1500);
+  navigator.clipboard.writeText(PAGE_URL).then(function(){
+    if(copyTimer){ clearTimeout(copyTimer); } else { copyHtml = btn.innerHTML; }
+    btn.textContent = (curLang() === "de") ? "✓ Kopiert" : "✓ Copied";
+    copyTimer = setTimeout(function(){ btn.innerHTML = copyHtml; copyTimer = null; }, 1500);
   });
 }
+
+// Beim Laden die im <head> ermittelte Sprache vollständig anwenden (Knöpfe, Titel, alt-Texte)
+// — bewusst applyLang, damit ein blosser Besuch die Browsersprach-Erkennung nicht einfriert.
+applyLang(curLang());
+
 // Download-Knopf auf die direkte, versionierte .exe der neuesten Release heben
 // (Fallback bleibt die Releases-Seite, falls die GitHub-API mal nicht antwortet).
 fetch("https://api.github.com/repos/WellDone-PROmpter/PROmpter/releases/latest")
