@@ -2,6 +2,14 @@
 
 Neueste Version oben. Aktuelle Releases & Download: https://welldone-prompter.github.io/PROmpter/
 
+**Version 1.12** (September 2026)
+- **Bericht heißt jetzt „Ergebnis-Übersicht":** Der Standardtitel des PDF lautet „PROmpter — Ergebnis-Übersicht" (englisch „Results overview"). Ein gespeicherter alter Standardtitel wird automatisch umgestellt; eine selbst gesetzte Kopfzeile bleibt unverändert.
+- **Datenquellen-Zeile präzisiert:** Der Bericht beschreibt jetzt genau, was PROmpter tut: Cq-Werte, Geräte-Calls und Kurven werden **unverändert übernommen**, die Calls je Probe nach einer **festen Regel** zusammengefasst; maßgeblich bleiben die Gerätesoftware und die Befundfreigabe durch das Labor.
+- **Kontroll-Zeilen:** „Alle Kontrollen vom Gerät als gültig („Valid") gemeldet." bzw. „Achtung: mind. eine Kontrolle nicht vom Gerät als gültig gemeldet — bitte prüfen."
+- **Handbuch korrigiert:** Die Zusammenfassungs-Regel ist jetzt richtig beschrieben (meldet das Gerät für ein Target „Invalid", lautet der Status der Probe „ungültig"); neutrale Beispiele; überarbeitete Hinweise – PROmpter wird **nicht als Medizinprodukt oder In-vitro-Diagnostikum in Verkehr gebracht**, trägt keine CE-Kennzeichnung und ist vor dem Routineeinsatz im **Qualitätsmanagement des Labors zu prüfen und freizugeben**; die Haftung richtet sich nach den gesetzlichen Vorschriften.
+- **Fenstertitel und „❓"-Dialog** entsprechend angepasst; **Download-Seite** mit Impressum und Datenschutzerklärung.
+- **Hinweis für Labore mit freigegebener Version:** Kopfzeile und Kontroll-Zeilen des PDF-Berichts haben sich geändert – bitte im Rahmen der Änderungskontrolle prüfen.
+
 **Version 1.11** (Juli 2026)
 - **Englischer Berichtstitel:** Im englischen Modus trägt der PDF-Bericht jetzt den Standardtitel „PROmpter — Results report" (statt des deutschen „PROmpter — Ergebnisbericht"). Eine selbst gesetzte Kopfzeile bleibt unverändert.
 

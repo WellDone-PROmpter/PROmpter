@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PROmpter — Download</title>
-<meta id="metadesc" name="description" content="PROmpter — kostenloses, offline laufendes Windows-Werkzeug, das LightCycler-PRO-Exporte automatisch zu PDF-Bericht und Excel aufbereitet.">
+<meta id="metadesc" name="description" content="PROmpter — kostenloses, offline laufendes Windows-Werkzeug für formatierte PDF- und Excel-Übersichten aus LightCycler® PRO-Exportdateien.">
 <link rel="icon" type="image/png" href="logo.png">
 <style>
   :root{ --blue:#16527E; --accent:#27AE60; --ink:#243038; --muted:#6b7785; --line:#e3e8ee; --warn-bg:#FFF6E5; --warn-br:#E0B870; --warn-ink:#7A4F01; }
@@ -85,8 +85,8 @@
   <div class="wrap">
     <img class="logo" src="logo.png" alt="PROmpter Logo">
     <h1>PROmpter</h1>
-    <p class="tagline l-de">Individuelle Ergebnis-Berichte für den Roche LightCycler PRO</p>
-    <p class="tagline l-en">Custom result reports for the Roche LightCycler PRO</p>
+    <p class="tagline l-de">Formatierte PDF- und Excel-Übersichten aus LightCycler® PRO-Exportdateien</p>
+    <p class="tagline l-en">Formatted PDF and Excel overviews from LightCycler® PRO export files</p>
     <p class="sub l-de">Ein kostenloses, vollständig <strong>offline</strong> laufendes Windows-Werkzeug — aus den Exporten automatisch PDF-Berichte oder Excel erstellen.</p>
     <p class="sub l-en">A free Windows tool that runs fully <strong>offline</strong> — turning the exports into PDF reports or Excel automatically.</p>
     <a id="dlbtn" class="btn" href="https://github.com/WellDone-PROmpter/PROmpter/releases/latest">
@@ -116,8 +116,8 @@
     <ul class="feat">
       <li class="l-de">Überwacht den <strong>Export-Ordner</strong> des LightCycler PRO</li>
       <li class="l-en">Watches the <strong>export folder</strong> of the LightCycler PRO</li>
-      <li class="l-de">Erstellt automatisch einen <strong>PDF-Bericht</strong> (Befund + Kurven)</li>
-      <li class="l-en">Creates a <strong>PDF report</strong> automatically (findings + curves)</li>
+      <li class="l-de">Erstellt automatisch einen <strong>PDF-Bericht</strong> (Ergebnisse + Kurven)</li>
+      <li class="l-en">Creates a <strong>PDF report</strong> automatically (results + curves)</li>
       <li class="l-de">Erstellt automatisch eine <strong>Excel-Tabelle</strong> der Ergebnisse</li>
       <li class="l-en">Creates an <strong>Excel table</strong> of the results automatically</li>
       <li class="l-de">Zusammensetzung der Berichte <strong>individuell anpassbar</strong></li>
@@ -150,10 +150,10 @@
 <section>
   <div class="wrap">
     <div class="sister l-de">
-      🧪 <strong>Schwester-App: <a href="https://welldone-prompter.github.io/WellDone/">WellDone!</a></strong> — die Plattenbelegung &amp; das PCR-Setup <em>vor</em> dem Lauf (Pipettierschema + LC-PRO-Setup). <em>WellDone = Vorbereitung, PROmpter = Auswertung.</em>
+      🧪 <strong>Schwester-App: <a href="https://welldone-prompter.github.io/WellDone/">WellDone!</a></strong> — die Plattenbelegung &amp; das PCR-Setup <em>vor</em> dem Lauf (Pipettierschema + LC-PRO-Setup). <em>WellDone = Vorbereitung, PROmpter = Ergebnis-Übersicht.</em>
     </div>
     <div class="sister l-en">
-      🧪 <strong>Sister app: <a href="https://welldone-prompter.github.io/WellDone/">WellDone!</a></strong> — the plate setup &amp; the PCR setup <em>before</em> the run (pipetting scheme + LC PRO setup). <em>WellDone = preparation, PROmpter = evaluation.</em>
+      🧪 <strong>Sister app: <a href="https://welldone-prompter.github.io/WellDone/">WellDone!</a></strong> — the plate setup &amp; the PCR setup <em>before</em> the run (pipetting scheme + LC PRO setup). <em>WellDone = preparation, PROmpter = results overview.</em>
     </div>
   </div>
 </section>
@@ -209,14 +209,20 @@
 <section>
   <div class="wrap">
     <div class="warn l-de">
-      <strong>⚠️ Wichtiger Hinweis:</strong> PROmpter ist ein <strong>Hilfswerkzeug, kein Medizinprodukt und nicht validiert</strong>.
-      Erzeugte Berichte <strong>vor der Verwendung prüfen</strong>. Es wird keine Haftung für Schäden oder fehlerhafte Ergebnisse übernommen.
-      <p style="margin:12px 0 0;">PROmpter ist ein <strong>reines Darstellungs-/Report-Werkzeug</strong>. Alle Werte (Cq, finalCall, Kurven) stammen <strong>unverändert</strong> vom LightCycler PRO. PROmpter rechnet nichts neu und interpretiert nichts um — es fasst die geräte-eigenen Ergebnisse nur übersichtlich zusammen. Die Berichte sind eine <strong>Zwischenauswertung</strong>; die fachliche Freigabe erfolgt weiterhin manuell.</p>
+      <strong>⚠️ Wichtiger Hinweis:</strong> PROmpter ist ein kostenloses, nicht validiertes Hilfswerkzeug. Es übernimmt Cq-Werte, Geräte-Calls und Kurven
+      unverändert aus dem LightCycler-PRO-Export und fasst die Calls je Probe nach einer festen Regel übersichtlich zusammen; es berechnet keine Werte neu
+      und setzt keine eigenen Grenzwerte. Maßgeblich bleiben die Ergebnisse in der Gerätesoftware und die Befundfreigabe durch das Labor.
+      PROmpter wird nicht als Medizinprodukt oder In-vitro-Diagnostikum in Verkehr gebracht, trägt keine CE-Kennzeichnung und wurde regulatorisch
+      nicht formal geprüft. Vor dem Routineeinsatz ist es im Qualitätsmanagement des Labors zu prüfen und freizugeben. Die Haftung richtet sich nach
+      den gesetzlichen Vorschriften.
     </div>
     <div class="warn l-en">
-      <strong>⚠️ Important note:</strong> PROmpter is a <strong>helper tool — not a medical device and not validated</strong>.
-      Check the generated reports <strong>before you use them</strong>. No liability is accepted for damage or incorrect results.
-      <p style="margin:12px 0 0;">PROmpter is <strong>purely a presentation and reporting tool</strong>. All values (Cq, finalCall, curves) come <strong>unchanged</strong> from the LightCycler PRO. PROmpter does not recalculate anything and does not reinterpret anything — it only lays out the instrument's own results clearly. The reports are an <strong>interim evaluation</strong>; the professional sign-off is still done manually.</p>
+      <strong>⚠️ Important note:</strong> PROmpter is a free, non-validated helper tool. It takes Cq values, instrument calls and curves unchanged
+      from the LightCycler PRO export and summarises the calls per sample according to a fixed rule; it does not recalculate any values or apply
+      thresholds of its own. The results in the instrument software and the laboratory's result release remain authoritative.
+      PROmpter is not placed on the market as a medical device or in vitro diagnostic device, carries no CE marking and has not undergone a formal
+      regulatory assessment. Before routine use, the laboratory must check and release it within its quality management. Liability is governed by
+      the statutory provisions.
     </div>
   </div>
 </section>
@@ -233,6 +239,8 @@
     <p class="l-en">Free, private sharing is welcome · <strong>no sale / no commercial distribution</strong>.<br>
       “Roche” and “LightCycler” are trademarks of their respective owners. PROmpter is an <strong>independent, private project</strong>,
       not reviewed or endorsed by Roche.</p>
+    <p class="l-de"><a href="https://welldone-prompter.github.io/WellDone/impressum.html">Impressum</a> · <a href="https://welldone-prompter.github.io/WellDone/datenschutz.html">Datenschutz</a></p>
+    <p class="l-en"><a href="https://welldone-prompter.github.io/WellDone/impressum.html">Legal notice</a> · <a href="https://welldone-prompter.github.io/WellDone/datenschutz.html">Privacy</a></p>
   </div>
 </footer>
 
@@ -240,9 +248,9 @@
 var PAGE_URL = "https://welldone-prompter.github.io/PROmpter/";
 var META = {
   de: { title:"PROmpter — Download",
-        desc:"PROmpter — kostenloses, offline laufendes Windows-Werkzeug, das LightCycler-PRO-Exporte automatisch zu PDF-Bericht und Excel aufbereitet." },
+        desc:"PROmpter — kostenloses, offline laufendes Windows-Werkzeug für formatierte PDF- und Excel-Übersichten aus LightCycler® PRO-Exportdateien." },
   en: { title:"PROmpter — Download",
-        desc:"PROmpter — free, fully offline Windows tool that turns Roche LightCycler PRO exports into a PDF report and an Excel table." }
+        desc:"PROmpter — free, fully offline Windows tool for formatted PDF and Excel overviews from LightCycler® PRO export files." }
 };
 
 function curLang(){ return document.documentElement.getAttribute("data-lang") === "en" ? "en" : "de"; }

@@ -1,6 +1,6 @@
 # PROmpter
 
-**Ergebnis-Aufbereitung für den Roche LightCycler PRO** — ein kostenloses, vollständig **offline** laufendes Windows-Werkzeug.
+**Ergebnis-Übersicht – kompatibel mit LightCycler® PRO** — ein kostenloses, vollständig **offline** laufendes Windows-Werkzeug.
 
 ## ⬇ Download
 
@@ -18,15 +18,15 @@ Keine Installation nötig — die `.exe` einfach in einen festen Ordner legen un
 
 ## Was macht PROmpter?
 
-PROmpter **überwacht den Export-Ordner** des LightCycler PRO und bereitet die exportierten Läufe automatisch zu einem **PDF-Bericht** (Befund/Zusammenfassung inkl. Kurven) und einer **Excel-Tabelle** der Ergebnisse auf — danach wird die Originaldatei archiviert. Oberfläche und Handbuch in **Deutsch & Englisch**.
+PROmpter **überwacht den Export-Ordner** des LightCycler PRO und bereitet die exportierten Läufe automatisch zu einer formatierten **PDF-Übersicht** (Zusammenfassung inkl. Kurven) und einer **Excel-Tabelle** der Ergebnisse auf — danach wird die Originaldatei archiviert. Oberfläche und Handbuch in **Deutsch & Englisch**.
 
 ## 🧪 Schwester-App: WellDone!
 
-Passend dazu — **vor** dem Lauf: [**WellDone!**](https://welldone-prompter.github.io/WellDone/) belegt die PCR-Platte und erzeugt das Pipettierschema + das LC-PRO-Setup. *(WellDone = Vorbereitung, PROmpter = Auswertung.)*
+Passend dazu — **vor** dem Lauf: [**WellDone!**](https://welldone-prompter.github.io/WellDone/) belegt die PCR-Platte und erzeugt das Pipettierschema + das LC-PRO-Setup. *(WellDone = Vorbereitung, PROmpter = Ergebnis-Übersicht.)*
 
 ## ⚠️ Wichtiger Hinweis
 
-PROmpter ist ein **Hilfswerkzeug, kein Medizinprodukt und nicht validiert**. Erzeugte Berichte **vor der Verwendung prüfen**. Es wird keine Haftung für Schäden oder fehlerhafte Ergebnisse übernommen.
+PROmpter ist ein kostenloses, **nicht validiertes Hilfswerkzeug**. Es übernimmt Cq-Werte, Geräte-Calls und Kurven unverändert aus dem LightCycler-PRO-Export und fasst die Calls je Probe nach einer festen Regel übersichtlich zusammen; es berechnet keine Werte neu und setzt keine eigenen Grenzwerte. **Maßgeblich bleiben die Ergebnisse in der Gerätesoftware und die Befundfreigabe durch das Labor.** PROmpter wird **nicht als Medizinprodukt oder In-vitro-Diagnostikum in Verkehr gebracht**, trägt keine CE-Kennzeichnung und wurde regulatorisch nicht formal geprüft. Vor dem Routineeinsatz ist es im Qualitätsmanagement des Labors zu prüfen und freizugeben. Die Haftung richtet sich nach den gesetzlichen Vorschriften.
 
 ## Kontakt
 
@@ -38,4 +38,4 @@ Freie, private Weitergabe erwünscht; **kein Verkauf / kein kommerzieller Vertri
 
 ---
 
-*English — PROmpter is a free, fully **offline** Windows tool that watches the Roche LightCycler PRO export folder and turns exported runs into a **PDF report** and an **Excel table** of the results. Download from the [download page](https://welldone-prompter.github.io/PROmpter/). **Helper tool — not a medical device, not validated; check every report.** See the [English manual](MANUAL_EN.pdf). Sister app: [WellDone!](https://welldone-prompter.github.io/WellDone/) (plate setup before the run). An independent, private project, not reviewed or endorsed by Roche.*
+*English — PROmpter is a free, fully **offline** Windows tool that watches the LightCycler® PRO export folder and turns exported runs into a formatted **PDF overview** and an **Excel table** of the results. Download from the [download page](https://welldone-prompter.github.io/PROmpter/). **Non-validated helper tool — it takes Cq values, instrument calls and curves unchanged and summarises the calls per sample by a fixed rule; the instrument software and the laboratory's result release remain authoritative. Not placed on the market as a medical device/IVD, no CE marking, no formal regulatory assessment; release it in your lab's QM before routine use. Liability is governed by the statutory provisions.** See the [English manual](MANUAL_EN.pdf). Sister app: [WellDone!](https://welldone-prompter.github.io/WellDone/) (plate setup before the run). An independent, private project, not reviewed or endorsed by Roche.*
